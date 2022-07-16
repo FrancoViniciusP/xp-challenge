@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { PASSWORD_MIN, REGEX_VALIDATION } from '../helpers/constants';
 import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
+import LoginButton from '../styles/elements/LoginButton';
 
 export default function LoginForm() {
   const [userInfo, setUserInfo] = useState({
@@ -50,13 +51,13 @@ export default function LoginForm() {
         <input name="password" type="password" value={userInfo.password} onChange={handleChange} />
       </label>
 
-      <button type="submit" aria-label="entrar" disabled={isButtonDisabled}> ENTRAR</button>
+      <LoginButton type="submit" aria-label="entrar" disabled={isButtonDisabled}> ENTRAR</LoginButton>
 
       <p>
         Esqueceu a senha?
         <strong> Clique Aqui</strong>
       </p>
-
+      <hr />
     </form>
 
   );
