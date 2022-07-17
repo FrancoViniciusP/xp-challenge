@@ -44,6 +44,7 @@ const Reset = createGlobalStyle`
     background-color: var(--black)
     color: white;
     font-size: 16px;
+    text-align: center;
   }
 
   input {
