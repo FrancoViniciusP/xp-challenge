@@ -34,7 +34,7 @@ const Reset = createGlobalStyle`
   }
 
   button:disabled{
-    background-color: var(--gray-secundary);
+    background-color: var(--gray);
   }
 
   button:hover{
@@ -55,6 +55,7 @@ const Reset = createGlobalStyle`
     padding: 5px 10px;
     font-size: 16px;
     margin: 20px 0px;
+    background: none;
   }
 
   img {
@@ -87,12 +88,18 @@ const Reset = createGlobalStyle`
     font-size: 14px;
     display: block;
     margin: 0 auto 10px;
+    background: none;
   }
 
   hr {
     border: 0;
     border-top: 1px solid var(--yellow);
     background-color: var(--yellow);
+  }
+
+  h1, div{
+    background: none;
+
   }
 `;
 

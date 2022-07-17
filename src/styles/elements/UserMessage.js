@@ -8,6 +8,7 @@ export default style.h1`
   font-size: 20px;
   font-weight: lighter;
   margin: 60px 20px 0px;
+  background: none;
   
   
   hr {

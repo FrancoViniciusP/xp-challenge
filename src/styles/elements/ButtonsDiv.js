@@ -4,6 +4,8 @@ export default style.div`
 display: flex;
 justify-content: space-evenly;
 margin: 40px 0;
+background: none;
+
 
 
 button {

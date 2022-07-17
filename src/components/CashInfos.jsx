@@ -16,14 +16,14 @@ export default function CashInfos({ props }) {
   }, []);
 
   return (
-    <div>
+    <span>
       <UserMessage>Saldo disponível</UserMessage>
       <h1>{`R$ ${amount}`}</h1>
       <ButtonsDiv>
         <button className={leftType} type="button" onClick={leftClick}>{leftButtonName}</button>
         <button className={rightType} type="button" onClick={rightClick}>{rightButtonName}</button>
       </ButtonsDiv>
-    </div>
+    </span>
   );
 }
 
