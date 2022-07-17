@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import LoginButton from '../styles/elements/LoginButton';
+import ConfirmButton from '../styles/elements/ConfirmButton';
 
 export default function TransferMoney({ isWithdraw }) {
   const [withdrawValue, setWithdrawValue] = useState(0);
@@ -23,7 +23,7 @@ export default function TransferMoney({ isWithdraw }) {
           <input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />
           {isDisabled && (<p>Valor incorreto</p>)}
 
-          <LoginButton disabled={isDisabled} type="reset">CONFIRMAR</LoginButton>
+          <ConfirmButton disabled={isDisabled} type="reset">CONFIRMAR</ConfirmButton>
         </div>
       )
 

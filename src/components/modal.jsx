@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Modal from '@mui/material/Modal';
 import CashInfos from './CashInfos';
 import TransferMoney from './TransferMoney';
+import ModalButton from '../styles/elements/ModalButton';
 
 const style = {
   display: 'block',
@@ -45,10 +46,11 @@ export default function BasicModal({ props }) {
   return (
     <Modal
       open={openModal}
-      onClose={handleClose}
+    //   onClose={handleClose}
       sx={style}
     >
       <span>
+        <ModalButton type="button" onClick={handleClose}>X</ModalButton>
         <CashInfos props={pageProps} />
         <TransferMoney isWithdraw={isWithdraw} />
       </span>
