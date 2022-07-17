@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
 export default function Carteira() {
   return (
-    <main>
-      <p>Carteira</p>
-    </main>
+    <body>
+      <Header />
+    </body>
   );
 }
