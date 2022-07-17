@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import CashInfos from '../components/CashInfos';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import InvestInfos from '../components/InvestInfos';
 
@@ -18,11 +19,13 @@ export default function Carteira() {
     leftType: 'secondary',
     rightType: 'primary',
   };
+
   return (
     <body>
       <Header />
       <InvestInfos />
       <CashInfos props={pageProps} />
+      <Footer />
     </body>
   );
 }

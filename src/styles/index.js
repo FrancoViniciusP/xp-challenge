@@ -20,8 +20,9 @@ const Reset = createGlobalStyle`
     --green: #00CB39;
     --green-secundary: #C3FF9E;
     --gray: #D9D9D9;
-    --gray-secundary: #E7E7E7;
+    --gray-secondary: #E7E7E7;
     --black: #000000;
+    --black-secondary: #252525;
 
   }
 
