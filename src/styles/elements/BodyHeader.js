@@ -4,9 +4,10 @@ export default style.div`
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   button {
+    color: white;
     background-color: black;
     padding: 45px 20px 0px;
     margin: 0px;
@@ -16,5 +17,11 @@ export default style.div`
   button img {
     width: 25px;
     margin: 0px;
+  }
+
+  .bolsaButton {
+    font-size: 24px;
+    width: 50%;
+    padding: 30px 0px ;
   }
 `;
