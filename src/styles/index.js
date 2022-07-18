@@ -41,12 +41,15 @@ const Reset = createGlobalStyle`
     cursor: pointer;
   }
 
+  button:focus {
+    text-decoration: 1px underline var(--yellow);
+  }
+
   body {
     background-color: var(--black)
     color: white;
     font-size: 16px;
-    text-align: center;
-    
+    text-align: center;    
   }
 
   input {
@@ -59,10 +62,10 @@ const Reset = createGlobalStyle`
     background: none;
   }
 
-  img {
-    width: 50%;
-    margin: 13vh auto 0;
-    text-align: center;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   main {

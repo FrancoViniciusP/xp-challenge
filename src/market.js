@@ -12,13 +12,19 @@ export default [
     quantity: 100,
   },
   {
+    symbol: 'ITUB4',
+    price: '28,98',
+    variation: 1.15,
+    quantity: 0,
+  },
+  {
     symbol: 'VALE3',
     price: '70,63',
     variation: -2.15,
     quantity: 300,
   },
   {
-    symbol: 'ITUB4',
+    symbol: 'BBSA4',
     price: '28,98',
     variation: 1.15,
     quantity: 0,

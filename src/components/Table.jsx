@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import market from '../market';
+import PropTypes from 'prop-types';
 import TableStyle from '../styles/elements/TableStyle';
 import DealModal from './DealModal';
 import TableBody from './TableBody';
 
-export default function Table() {
+export default function Table({ stocks }) {
   const [openModal, setOpenModal] = useState(false);
   const [dealStock, setDealStock] = useState({});
 
@@ -13,7 +13,6 @@ export default function Table() {
     setDealStock,
   };
 
-  // console.log(dealStock, openModal);
   const modalProps = {
     openModal,
     setOpenModal,
@@ -33,9 +32,13 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {market.map((stock) => <TableBody key={stock.symbol} props={tableProps} stock={stock} />)}
+        {stocks.map((stock) => <TableBody key={stock.symbol} props={tableProps} stock={stock} />)}
       </tbody>
       <DealModal props={modalProps} />
     </TableStyle>
   );
 }
+
+Table.propTypes = {
+  stocks: PropTypes.array,
+}.isRequired;

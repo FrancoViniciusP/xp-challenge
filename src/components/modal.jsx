@@ -1,17 +1,16 @@
-// import * as React from 'react';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '@mui/material/Modal';
 import CashInfos from './CashInfos';
 import TransferMoney from './TransferMoney';
 import ModalButton from '../styles/elements/ModalButton';
-// import TableBody from './TableBody';
 
 const style = {
   display: 'block',
   margin: 'auto',
   padding: '20px 0',
-  maxWidth: '500px',
+  maxWidth: '400px',
+  minHeight: '500px',
   width: 0.9,
   height: '70%',
   bgcolor: 'var(--black-secondary)',

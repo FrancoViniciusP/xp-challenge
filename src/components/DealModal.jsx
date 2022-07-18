@@ -5,13 +5,15 @@ import ModalButton from '../styles/elements/ModalButton';
 import UserMessage from '../styles/elements/UserMessage';
 import ConfirmButton from '../styles/elements/ConfirmButton';
 import TableStyle from '../styles/elements/TableStyle';
+import DealDiv from '../styles/elements/DealDiv';
 
 const style = {
   display: 'block',
   margin: 'auto',
   padding: '20px 0',
-  maxWidth: '500px',
   width: 0.9,
+  maxWidth: '400px',
+  minHeight: '500px',
   height: '70%',
   bgcolor: 'var(--black-secondary)',
 };
@@ -51,6 +53,14 @@ export default function DealModal({ props }) {
             </tr>
           </tbody>
         </TableStyle>
+        <DealDiv>
+          <img src="comprar.svg" alt="" />
+          <input type="number" />
+        </DealDiv>
+        <DealDiv>
+          <img src="vender.svg" alt="" />
+          <input type="number" />
+        </DealDiv>
 
         <ConfirmButton type="reset">CONFIRMAR</ConfirmButton>
       </span>

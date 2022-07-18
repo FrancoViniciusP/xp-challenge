@@ -1,7 +1,6 @@
 import style from 'styled-components';
 
 export default style.h1`
-  // max-width: 180px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
