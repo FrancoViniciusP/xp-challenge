@@ -6,13 +6,16 @@ width: 100%;
 max-width: 500px;
 border-collapse:separate; 
 border-spacing: 3px  10px;
+background: none;
 
 th {
   font-size: 14px;
   font-weight: thin;
   overflow: hidden;
   font-weight: normal;
+  background: none;
 }
+
 
 td {
   background: #424242;

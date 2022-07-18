@@ -1,30 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function TableBody() {
+export default function TableBody({ props, stock }) {
+  const {
+    symbol, price, variation, quantity,
+  } = stock;
+
+  function handleClick() {
+    props.negociate();
+    props.setDealStock(stock);
+  }
+
   return (
-    <tbody>
-      <tr>
-        <td className="ticker">PETR4</td>
-        <td>20,00</td>
-        <td className="negative">-1,27%</td>
-        <td>10000</td>
-        <td className="negociate">
-          <button type="button">
-            <img src="venda.svg" alt="" />
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td className="ticker">ITUB4</td>
-        <td>20,00</td>
-        <td className="positive">2,03%</td>
-        <td>0</td>
-        <td className="negociate">
-          <button type="button">
-            <img src="noVenda.svg" alt="" />
-          </button>
-        </td>
-      </tr>
-    </tbody>
+
+    <tr>
+      <td className="ticker">{symbol}</td>
+      <td>{price}</td>
+      <td className={variation > 0 ? 'positive' : 'negative'}>{`${variation}%`}</td>
+      <td>{quantity}</td>
+      <td className="negociate">
+        <button type="button" onClick={handleClick}>
+          <img src={quantity > 0 ? 'venda.svg' : 'noVenda.svg'} alt="botão para negociar" />
+        </button>
+      </td>
+
+    </tr>
+
   );
 }
+
+TableBody.propTypes = {
+  negociate: PropTypes.func,
+}.isRequired;

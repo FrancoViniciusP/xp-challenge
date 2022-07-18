@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ConfirmButton from '../styles/elements/ConfirmButton';
 
-export default function TransferMoney({ isWithdraw }) {
+export default function TransferMoney({ props }) {
+  const { isWithdraw, isNegociation } = props;
   const [withdrawValue, setWithdrawValue] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -20,7 +21,9 @@ export default function TransferMoney({ isWithdraw }) {
     isWithdraw
       ? (
         <div>
-          <input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />
+          {isNegociation
+            ? (<h1>inputs</h1>)
+            : (<input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />)}
           {isDisabled && (<p>Valor incorreto</p>)}
 
           <ConfirmButton disabled={isDisabled} type="reset">CONFIRMAR</ConfirmButton>

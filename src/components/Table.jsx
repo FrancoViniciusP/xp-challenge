@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import market from '../market';
 import TableStyle from '../styles/elements/TableStyle';
+import DealModal from './DealModal';
 import TableBody from './TableBody';
 
 export default function Table() {
+  const [openModal, setOpenModal] = useState(false);
+  const [dealStock, setDealStock] = useState({});
+
+  const tableProps = {
+    negociate: () => setOpenModal(true),
+    setDealStock,
+  };
+
+  // console.log(dealStock, openModal);
+  const modalProps = {
+    openModal,
+    setOpenModal,
+    isNegociation: true,
+    dealStock,
+  };
+
   return (
     <TableStyle>
       <thead>
@@ -14,7 +32,10 @@ export default function Table() {
           <th>NEGOCIAR</th>
         </tr>
       </thead>
-      <TableBody />
+      <tbody>
+        {market.map((stock) => <TableBody key={stock.symbol} props={tableProps} stock={stock} />)}
+      </tbody>
+      <DealModal props={modalProps} />
     </TableStyle>
   );
 }
