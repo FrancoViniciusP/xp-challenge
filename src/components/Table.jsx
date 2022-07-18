@@ -1,8 +1,10 @@
 import React from 'react';
+import TableStyle from '../styles/elements/TableStyle';
+import TableBody from './TableBody';
 
 export default function Table() {
   return (
-    <table>
+    <TableStyle>
       <thead>
         <tr>
           <th>AÇÃO</th>
@@ -12,15 +14,7 @@ export default function Table() {
           <th>NEGOCIAR</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>PETR4</td>
-          <td>20,00</td>
-          <td>-1,27%</td>
-          <td>1000</td>
-          <td>C V</td>
-        </tr>
-      </tbody>
-    </table>
+      <TableBody />
+    </TableStyle>
   );
 }

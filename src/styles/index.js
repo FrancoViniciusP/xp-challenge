@@ -16,9 +16,9 @@ const Reset = createGlobalStyle`
     --blue: #479BFF;
     --yellow: #FFC709;
     --red: #FF6969;
-    --red-secundary: #FF9E9E;
+    --red-secondary: #FF9E9E;
     --green: #00CB39;
-    --green-secundary: #C3FF9E;
+    --green-secondary: #C3FF9E;
     --gray: #D9D9D9;
     --gray-secondary: #E7E7E7;
     --black: #000000;
@@ -46,6 +46,7 @@ const Reset = createGlobalStyle`
     color: white;
     font-size: 16px;
     text-align: center;
+    
   }
 
   input {
