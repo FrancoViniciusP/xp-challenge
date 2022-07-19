@@ -9,6 +9,7 @@ import TransferModal from '../components/TransferModal';
 export default function Carteira() {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
+  const [hideValues, setHideValues] = useState(true);
 
   function investButton() {
     navigate('/bolsa');
@@ -17,6 +18,7 @@ export default function Carteira() {
   const modalProps = {
     openModal,
     setOpenModal,
+    hideValues,
   };
 
   const pageProps = {
@@ -26,12 +28,13 @@ export default function Carteira() {
     leftClick: () => setOpenModal(true),
     leftType: 'secondary',
     rightType: 'primary',
+    hideValues,
   };
 
   return (
     <span>
-      <Header />
-      <InvestInfos />
+      <Header setHide={setHideValues} />
+      <InvestInfos props={pageProps} />
       <CashInfos props={pageProps} />
       <TransferModal props={modalProps} />
       <Footer />

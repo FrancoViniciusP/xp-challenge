@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Skeleton } from '@mui/material';
+
 import PropTypes from 'prop-types';
 import formatter from '../helpers/functions';
 import ButtonsDiv from '../styles/elements/ButtonsDiv';
@@ -8,6 +10,7 @@ export default function CashInfos({ props }) {
   const [amount, setAmount] = useState(2000.01);
   const {
     leftButtonName, rightButtonName, leftClick, rightClick, leftType, rightType,
+    hideValues,
   } = props;
 
   useState(() => {
@@ -19,7 +22,18 @@ export default function CashInfos({ props }) {
     <span>
       <div className="infosSpace">
         <UserMessage>Saldo disponível</UserMessage>
-        <h1>{`R$ ${amount}`}</h1>
+        {hideValues
+          ? (
+            <Skeleton
+              animation="wave"
+              sx={{ bgcolor: 'grey.900', margin: 'auto' }}
+              width={200}
+              height={36}
+              variant="rectangular"
+              className="vender"
+            />
+          )
+          : <h1>{`R$ ${amount}`}</h1>}
       </div>
       <ButtonsDiv>
         <button className={leftType} type="button" onClick={leftClick}>{leftButtonName}</button>

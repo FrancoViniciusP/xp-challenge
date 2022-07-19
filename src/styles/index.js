@@ -23,7 +23,6 @@ const Reset = createGlobalStyle`
     --gray-secondary: #E7E7E7;
     --black: #000000;
     --black-secondary: #252525;
-
   }
 
   button{
@@ -40,11 +39,7 @@ const Reset = createGlobalStyle`
   button:hover{
     cursor: pointer;
   }
-
-  button:focus {
-    text-decoration: 1px underline var(--yellow);
-  }
-
+  
   body {
     background-color: var(--black)
     color: white;
@@ -56,6 +51,7 @@ const Reset = createGlobalStyle`
     border: 0px;
     border-bottom: 1px solid;
     outline: none;
+    text-align: right;
     padding: 5px 10px;
     font-size: 16px;
     margin: 20px 0px;
@@ -103,7 +99,6 @@ const Reset = createGlobalStyle`
 
   h1, div{
     background: none;
-
   }
 
  

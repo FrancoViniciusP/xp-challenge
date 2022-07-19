@@ -19,6 +19,11 @@ export default style.div`
     margin: 0px;
   }
 
+  button:focus {
+    text-decoration: 1px underline var(--yellow);
+  }
+
+
   .bolsaButton {
     font-size: 24px;
     width: 50%;

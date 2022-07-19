@@ -7,7 +7,7 @@ import ModalButton from '../styles/elements/ModalButton';
 import { style } from '../helpers/constants';
 
 export default function TransferModal({ props }) {
-  const { openModal, setOpenModal } = props;
+  const { openModal, setOpenModal, hideValues } = props;
   const [isWithdraw, setIsWithdraw] = useState(true);
   const [leftButton, setLeftButton] = useState('secondary');
   const [rightButton, setRightButton] = useState('primary');
@@ -35,6 +35,7 @@ export default function TransferModal({ props }) {
     rightClick: () => setIsWithdraw(true),
     leftType: leftButton,
     rightType: rightButton,
+    hideValues,
   };
 
   return (

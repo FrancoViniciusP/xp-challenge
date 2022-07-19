@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import GeneralButton from '../styles/elements/GeneralButton';
 
@@ -7,26 +7,24 @@ export default function TransferMoney({ props }) {
   const [withdrawValue, setWithdrawValue] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
 
+  useEffect(() => {
+    if (isWithdraw) {
+      if (withdrawValue > 2000 || withdrawValue < 0) {
+        setIsDisabled(true);
+      } else { setIsDisabled(false); }
+    } else { setIsDisabled(false); }
+  }, [isWithdraw, withdrawValue]);
+
   function setValue({ target: { value } }) {
     setWithdrawValue(value);
-
-    if (value > 2000 || value < 0) {
-      setIsDisabled(true);
-    } else {
-      setIsDisabled(false);
-    }
   }
 
   return (
-    isWithdraw
-      ? (
-        <div>
-          <input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />
-          {isDisabled && <p>Valor insuficiente</p>}
-          <GeneralButton disabled={isDisabled} type="reset">CONFIRMAR</GeneralButton>
-        </div>
-      )
-      : <h1>Informações para depósito</h1>
+    <div>
+      <input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />
+      {isDisabled && isWithdraw && <p>Valor insuficiente</p>}
+      <GeneralButton disabled={isDisabled} type="reset">CONFIRMAR</GeneralButton>
+    </div>
   );
 }
 
