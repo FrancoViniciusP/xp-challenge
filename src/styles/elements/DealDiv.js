@@ -17,15 +17,15 @@ input {
   margin: 0 15px;
   text-align: right;
   padding: 0 20px ;
-  border-radiur: 5px;
+  border-radius: 5px;
 }
 
 .buy {
-  border: 1px solid var(--blue);
+  border: 2px solid var(--blue);
 }
 
 .sell {
-  border: 1px solid var(--green);
+  border: 2px solid var(--green);
 }
 
 input:focus{
