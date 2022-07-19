@@ -1,10 +1,11 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export default function Conta() {
   return (
     <span>
-      <h1>Conta</h1>
+      <Header />
       <Footer />
     </span>
   );

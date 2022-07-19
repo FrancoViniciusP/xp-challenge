@@ -24,4 +24,8 @@ export default style.div`
     width: 50%;
     padding: 30px 0px ;
   }
+
+  h1{
+    margin: 60px 20px 0px;
+  }
 `;

@@ -11,7 +11,7 @@ export default function InvestInfos() {
   }, []);
 
   return (
-    <div>
+    <div className="infosSpace">
       <UserMessage>Valor Investido</UserMessage>
       <h1>{`R$ ${amount}`}</h1>
     </div>

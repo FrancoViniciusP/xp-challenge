@@ -13,13 +13,22 @@ img {
 
 input {
   width: 180px;
-  margin: 0;
+  height: 30px;
+  margin: 0 15px;
   text-align: right;
   padding: 0 20px ;
+  border-radiur: 5px;
+}
+
+.buy {
+  border: 1px solid var(--blue);
+}
+
+.sell {
+  border: 1px solid var(--green);
 }
 
 input:focus{
-    border: 0px;
     border-bottom: 2px solid var(--yellow);
 }
 `;

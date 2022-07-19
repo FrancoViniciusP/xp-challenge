@@ -17,8 +17,10 @@ export default function CashInfos({ props }) {
 
   return (
     <span>
-      <UserMessage>Saldo disponível</UserMessage>
-      <h1>{`R$ ${amount}`}</h1>
+      <div className="infosSpace">
+        <UserMessage>Saldo disponível</UserMessage>
+        <h1>{`R$ ${amount}`}</h1>
+      </div>
       <ButtonsDiv>
         <button className={leftType} type="button" onClick={leftClick}>{leftButtonName}</button>
         <button className={rightType} type="button" onClick={rightClick}>{rightButtonName}</button>

@@ -105,6 +105,33 @@ const Reset = createGlobalStyle`
     background: none;
 
   }
+
+ 
+  .deal {
+    color: white;
+    background-color: var(--blue);
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 120px;
+    margin: 20px 10px 0;
+  }
+
+  .deal:focus {
+    text-decoration: none;
+  }
+
+  .comprar {
+    background-color: var(--blue);
+  }
+
+  .vender {
+    background-color: var(--green);
+  }
+  
+  .infosSpace{
+    margin: 25px 0 ;
+  }
 `;
 
 export default Reset;
