@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GeneralButton from '../styles/elements/GeneralButton';
 
 export default function TransferMoney({ props }) {
-  const { isWithdraw, isNegociation } = props;
+  const { isWithdraw } = props;
   const [withdrawValue, setWithdrawValue] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -21,15 +21,11 @@ export default function TransferMoney({ props }) {
     isWithdraw
       ? (
         <div>
-          {isNegociation
-            ? (<h1>inputs</h1>)
-            : (<input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />)}
-          {isDisabled && (<p>Valor incorreto</p>)}
-
+          <input type="number" value={withdrawValue} onChange={(e) => setValue(e)} />
+          {isDisabled && <p>Valor insuficiente</p>}
           <GeneralButton disabled={isDisabled} type="reset">CONFIRMAR</GeneralButton>
         </div>
       )
-
       : <h1>Informações para depósito</h1>
   );
 }

@@ -7,9 +7,7 @@ import ModalButton from '../styles/elements/ModalButton';
 import { style } from '../helpers/constants';
 
 export default function BasicModal({ props }) {
-  const {
-    openModal, setOpenModal, isNegociation, stock,
-  } = props;
+  const { openModal, setOpenModal } = props;
   const [isWithdraw, setIsWithdraw] = useState(true);
   const [leftButton, setLeftButton] = useState('secondary');
   const [rightButton, setRightButton] = useState('primary');
@@ -28,7 +26,6 @@ export default function BasicModal({ props }) {
 
   const inputProps = {
     isWithdraw,
-    isNegociation,
   };
 
   const pageProps = {
@@ -38,8 +35,6 @@ export default function BasicModal({ props }) {
     rightClick: () => setIsWithdraw(true),
     leftType: leftButton,
     rightType: rightButton,
-    isNegociation,
-    stock,
   };
 
   return (
