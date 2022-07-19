@@ -4,7 +4,7 @@ import CashInfos from '../components/CashInfos';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import InvestInfos from '../components/InvestInfos';
-import BasicModal from '../components/modal';
+import TransferModal from '../components/TransferModal';
 
 export default function Carteira() {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function Carteira() {
       <Header />
       <InvestInfos />
       <CashInfos props={pageProps} />
-      <BasicModal props={modalProps} />
+      <TransferModal props={modalProps} />
       <Footer />
     </span>
   );

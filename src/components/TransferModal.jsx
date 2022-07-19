@@ -6,7 +6,7 @@ import TransferMoney from './TransferMoney';
 import ModalButton from '../styles/elements/ModalButton';
 import { style } from '../helpers/constants';
 
-export default function BasicModal({ props }) {
+export default function TransferModal({ props }) {
   const { openModal, setOpenModal } = props;
   const [isWithdraw, setIsWithdraw] = useState(true);
   const [leftButton, setLeftButton] = useState('secondary');
@@ -52,6 +52,6 @@ export default function BasicModal({ props }) {
   );
 }
 
-BasicModal.propTypes = {
+TransferModal.propTypes = {
   openModal: PropTypes.bool,
 }.isRequired;
