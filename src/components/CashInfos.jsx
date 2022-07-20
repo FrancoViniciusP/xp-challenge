@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Skeleton } from '@mui/material';
 
 import PropTypes from 'prop-types';
-import formatter from '../helpers/functions';
+import { useSelector } from 'react-redux';
 import ButtonsDiv from '../styles/elements/ButtonsDiv';
 import UserMessage from '../styles/elements/UserMessage';
 
 export default function CashInfos({ props }) {
-  const [amount, setAmount] = useState(2000.01);
+  const freeAmount = useSelector((state) => state.clientInfos.freeAmount);
   const {
     leftButtonName, rightButtonName, leftClick, rightClick, leftType, rightType,
     hideValues,
   } = props;
-
-  useState(() => {
-    const convert = formatter.format(amount);
-    setAmount(convert);
-  }, []);
 
   return (
     <span>
@@ -33,7 +28,7 @@ export default function CashInfos({ props }) {
               className="vender"
             />
           )
-          : <h1>{`R$ ${amount}`}</h1>}
+          : <h1>{`R$ ${freeAmount}`}</h1>}
       </div>
       <ButtonsDiv>
         <button className={leftType} type="button" onClick={leftClick}>{leftButtonName}</button>

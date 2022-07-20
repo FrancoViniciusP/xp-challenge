@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import BodyHeader from '../styles/elements/BodyHeader';
 import LogoHeader from '../styles/elements/LogoHeader';
 import UserMessage from '../styles/elements/UserMessage';
 import HrLogin from '../styles/elements/HrLogin';
 
 export default function Header({ setHide }) {
-  const [userName, setUserName] = useState('Usuário');
+  const name = useSelector((state) => state.clientInfos.name);
   const [toogle, setToogle] = useState(true);
-
-  useEffect(() => {
-    setUserName('VINICIUS');
-  }, []);
 
   function handleToogle() {
     setToogle((prevState) => !prevState);
@@ -22,7 +19,7 @@ export default function Header({ setHide }) {
     <BodyHeader>
       <LogoHeader src="xp_icon_white.png" alt="logo xp investimentos" />
       <UserMessage>
-        {`Olá, ${userName}`}
+        {`Olá, ${name}`}
         <HrLogin />
       </UserMessage>
 

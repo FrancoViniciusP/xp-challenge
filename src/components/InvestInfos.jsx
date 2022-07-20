@@ -1,22 +1,18 @@
 import { Skeleton } from '@mui/material';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import formatter from '../helpers/functions';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import UserMessage from '../styles/elements/UserMessage';
 
 export default function InvestInfos({ props }) {
-  const [amount, setAmount] = useState(10000.01);
+  const amount = useSelector((state) => state.clientInfos.amount);
   const { hideValues } = props;
-  useState(() => {
-    const convert = formatter.format(amount);
-    setAmount(convert);
-  }, []);
 
   return (
     <div className="infosSpace">
       <UserMessage>Patrimônio</UserMessage>
-      {hideValues ? (
 
+      {hideValues ? (
         <Skeleton
           animation="wave"
           sx={{ bgcolor: 'grey.900', margin: 'auto' }}
