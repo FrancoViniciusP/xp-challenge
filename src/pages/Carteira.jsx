@@ -9,7 +9,7 @@ import TransferModal from '../components/TransferModal';
 export default function Carteira() {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
-  const [hideValues, setHideValues] = useState(true);
+  const [hideValues, setHideValues] = useState(false);
 
   function investButton() {
     navigate('/bolsa');

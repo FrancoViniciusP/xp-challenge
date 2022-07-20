@@ -10,7 +10,7 @@ export default function InvestInfos({ props }) {
 
   return (
     <div className="infosSpace">
-      <UserMessage>Patrimônio</UserMessage>
+      <UserMessage>Patrimônio Investido</UserMessage>
 
       {hideValues ? (
         <Skeleton
