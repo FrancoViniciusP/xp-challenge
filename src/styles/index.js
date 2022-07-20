@@ -101,6 +101,10 @@ const Reset = createGlobalStyle`
     background: none;
   }
 
+  span {
+    background: none;
+  }
+
  
   .deal {
     color: white;
