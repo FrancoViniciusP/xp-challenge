@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '@mui/material/Modal';
+import { useSelector } from 'react-redux';
 import ModalButton from '../styles/elements/ModalButton';
 import UserMessage from '../styles/elements/UserMessage';
 import TableStyle from '../styles/elements/TableStyle';
 import DealDiv from '../styles/elements/DealDiv';
 import GeneralButton from '../styles/elements/GeneralButton';
 import { style } from '../helpers/constants';
+import store from '../redux/store';
+import { deposit, withdraw } from '../redux/reducers/clientInfos';
 
 export default function DealModal({ props }) {
   const { openModal, setOpenModal, dealStock } = props;
   const {
     symbol, price, variation, quantity,
   } = dealStock;
-  const total = 3000;
+  const freeAmount = useSelector((state) => state.clientInfos.freeAmount);
+
   const [inputValue, setInputValue] = useState(0);
   const [inputQuantity, setInputQuantity] = useState(0);
   const [isBuying, setIsBuying] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
+  const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
     if (openModal) {
@@ -30,11 +35,9 @@ export default function DealModal({ props }) {
     if (!isBuying) {
       setIsDisabled(inputQuantity > quantity || inputQuantity < 100);
     } else {
-      setIsDisabled(inputValue > total || inputQuantity < 100);
+      setIsDisabled(+inputValue > +freeAmount);
     }
-  }, [inputValue, inputQuantity, isBuying, quantity]);
-
-  const handleClose = () => setOpenModal(false);
+  }, [inputValue, inputQuantity, isBuying, quantity, freeAmount]);
 
   function roundNumber(number) {
     return Math.floor(number / 100) * 100;
@@ -50,16 +53,25 @@ export default function DealModal({ props }) {
     setInputQuantity(roundNumber(quanti));
   }
 
+  function handleQuantity({ value }) {
+    setInputQuantity(turnPositive(value));
+    const amount = value * price;
+    setInputValue(amount.toFixed(0));
+  }
+
   function afterFocus() {
     const newAmount = roundNumber(inputQuantity);
     setInputQuantity(newAmount);
     setInputValue((newAmount * price).toFixed(0));
   }
 
-  function handleQuantity({ value }) {
-    setInputQuantity(Math.abs(value));
-    const amount = value * price;
-    setInputValue(amount.toFixed(0));
+  function handleClick() {
+    afterFocus();
+    if (isBuying) {
+      store.dispatch(withdraw(inputValue));
+    } else {
+      store.dispatch(deposit(inputValue));
+    }
   }
 
   return (
@@ -71,7 +83,7 @@ export default function DealModal({ props }) {
         <ModalButton type="button" onClick={handleClose}>X</ModalButton>
         <div className="infosSpace">
           <UserMessage>Saldo disponível</UserMessage>
-          <h1>{`R$ ${total}`}</h1>
+          <h1>{`R$ ${freeAmount}`}</h1>
         </div>
         <TableStyle>
           <thead>
@@ -128,7 +140,7 @@ export default function DealModal({ props }) {
             onChange={({ target }) => handleValue(target)}
           />
         </DealDiv>
-        <GeneralButton disabled={isDisabled} type="reset">CONFIRMAR</GeneralButton>
+        <GeneralButton onClick={() => handleClick()} disabled={isDisabled} type="reset">CONFIRMAR</GeneralButton>
       </span>
     </Modal>
 

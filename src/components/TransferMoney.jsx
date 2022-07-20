@@ -13,7 +13,7 @@ export default function TransferMoney({ props }) {
 
   useEffect(() => {
     if (isWithdraw) {
-      if (inputValue > freeAmount || inputValue < 0) {
+      if (inputValue > +freeAmount || inputValue < 0) {
         setIsDisabled(true);
       } else { setIsDisabled(false); }
     } else { setIsDisabled(false); }
