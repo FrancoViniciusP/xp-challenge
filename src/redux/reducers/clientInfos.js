@@ -6,7 +6,7 @@ const clientInfos = createSlice({
   initialState: {
     name: 'USUÁRIO',
     codClient: 0,
-    freeAmount: 10000.00,
+    freeAmount: 10000,
   },
   reducers: {
     setName(state, action) {
@@ -21,11 +21,11 @@ const clientInfos = createSlice({
     },
     deposit(state, action) {
       const result = +state.freeAmount + +action.payload;
-      return { ...state, freeAmount: result.toFixed(2) };
+      return { ...state, freeAmount: result };
     },
     withdraw(state, action) {
       const result = +state.freeAmount - +action.payload;
-      return { ...state, freeAmount: result.toFixed(2) };
+      return { ...state, freeAmount: result };
     },
   },
 });

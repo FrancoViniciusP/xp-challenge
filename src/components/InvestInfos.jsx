@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 import UserMessage from '../styles/elements/UserMessage';
 
 export default function InvestInfos({ props }) {
-  const amount = useSelector((state) => state.clientInfos.amount);
+  const assets = useSelector((state) => state.assetsInfos.assets);
+
+  const amount = assets.reduce((acc, curr) => acc + (curr.quantity * curr.price), 0);
+
   const { hideValues } = props;
 
   return (
