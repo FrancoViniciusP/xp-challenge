@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import market from '../../market';
 
 const assetsInfos = createSlice({
-  name: 'client',
+  name: 'assets',
   initialState: {
     assets: market,
   },
