@@ -1,9 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import App from '../App';
+import Login from '../pages/Login';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+it('render login page', () => {
+  render(
+    <Login />,
+  );
+  const linkElement = screen.getByLabelText('Email');
   expect(linkElement).toBeInTheDocument();
 });

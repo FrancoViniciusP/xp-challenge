@@ -1,64 +1,77 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Navigate } from 'react-router';
 import { PASSWORD_MIN, REGEX_VALIDATION } from '../helpers/constants';
 import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
 import LoginButton from '../styles/elements/LoginButton';
 
 export default function LoginForm() {
-  const [userInfo, setUserInfo] = useState({
-    email: '',
-    password: '',
-  });
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
-  const navigate = useNavigate();
+  const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    const emailSaved = getLocalStorage('email');
-    setUserInfo((prevState) => ({
-      ...prevState,
-      email: emailSaved,
-    }));
+    const emailSaved = getLocalStorage('email') || '';
+    setUserEmail(emailSaved);
   }, []);
 
   useEffect(() => {
-    const { email, password } = userInfo;
-    const correctInfos = REGEX_VALIDATION.test(email) && password.length > PASSWORD_MIN;
+    const correctInfos = REGEX_VALIDATION.test(userEmail) && userPassword.length > PASSWORD_MIN;
     setIsButtonDisabled(!correctInfos);
-  }, [userInfo]);
+  }, [userEmail, userPassword]);
 
   function handleChange({ target: { name, value } }) {
-    setUserInfo((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    if (name === 'email') {
+      setUserEmail(value);
+    } else { setUserPassword(value); }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setLocalStorage('email', userInfo.email);
-    navigate('/carteira');
+    setLocalStorage('email', userEmail);
+    setRedirect(true);
   }
 
   return (
-    <form type="submit" onSubmit={handleSubmit}>
-      <label htmlFor="email">
-        Email
-        <input name="email" type="text" value={userInfo.email} onChange={handleChange} />
-      </label>
-      <label htmlFor="password">
-        Senha
-        <input name="password" type="password" value={userInfo.password} onChange={handleChange} />
-      </label>
+    <div>
+      {redirect && <Navigate to="/carteira" />}
 
-      <LoginButton type="submit" aria-label="entrar" disabled={isButtonDisabled}> ENTRAR</LoginButton>
+      <form type="submit" onSubmit={handleSubmit}>
+        <label htmlFor="email">
+          Email
+          <input
+            id="email"
+            name="email"
+            type="text"
+            value={userEmail}
+            onChange={handleChange}
+          />
+        </label>
 
-      <p>
-        Esqueceu a senha?
-        <strong> Clique Aqui</strong>
-      </p>
-      <hr />
-    </form>
+        <label htmlFor="password">
+          Senha
+          <input
+            name="password"
+            type="password"
+            value={userPassword}
+            onChange={handleChange}
+          />
+        </label>
 
+        <LoginButton
+          type="submit"
+          aria-label="entrar"
+          disabled={isButtonDisabled}
+        >
+          ENTRAR
+        </LoginButton>
+
+        <p>
+          Esqueceu a senha?
+          <strong> Clique Aqui</strong>
+        </p>
+        <hr />
+      </form>
+    </div>
   );
 }
