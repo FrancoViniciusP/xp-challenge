@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router';
+import { Navigate } from 'react-router-dom';
 import { PASSWORD_MIN, REGEX_VALIDATION } from '../helpers/constants';
 import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
 import LoginButton from '../styles/elements/LoginButton';
@@ -40,7 +40,7 @@ export default function LoginForm() {
         <label htmlFor="email">
           Email
           <input
-            id="email"
+            data-testid="email"
             name="email"
             type="text"
             value={userEmail}
@@ -51,6 +51,7 @@ export default function LoginForm() {
         <label htmlFor="password">
           Senha
           <input
+            data-testid="password"
             name="password"
             type="password"
             value={userPassword}
