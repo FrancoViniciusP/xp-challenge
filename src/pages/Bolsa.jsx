@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Table from '../components/Table';
-import market from '../market';
 import BodyHeader from '../styles/elements/BodyHeader';
 
 export default function Bolsa() {
+  const market = useSelector((state) => state.assetsInfos.assets);
   const [stocks, setStocks] = useState(market);
+
+  useEffect(() => {
+    setStocks(market);
+  }, [market]);
 
   function filterMyStocks() {
     const filtered = market.filter((item) => item.quantity > 0);

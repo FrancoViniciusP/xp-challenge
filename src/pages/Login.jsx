@@ -9,7 +9,6 @@ export default function Login() {
       <LogoLogin src="xp_icon_white.png" alt="logo xp investimentos" />
       <HrLogin />
       <LoginForm />
-
     </main>
   );
 }

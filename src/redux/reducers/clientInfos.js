@@ -7,7 +7,7 @@ const clientInfos = createSlice({
     name: 'USUÁRIO',
     codClient: 0,
     amount: 0,
-    freeAmount: 1000.00,
+    freeAmount: 10000.00,
   },
   reducers: {
     setName(state, action) {

@@ -10,18 +10,21 @@ import GeneralButton from '../styles/elements/GeneralButton';
 import { style } from '../helpers/constants';
 import store from '../redux/store';
 import { deposit, withdraw } from '../redux/reducers/clientInfos';
+import { buyAssets, sellAssets } from '../redux/reducers/assetsInfos';
 
 export default function DealModal({ props }) {
-  const { openModal, setOpenModal, dealStock } = props;
-  const {
-    symbol, price, variation, quantity,
-  } = dealStock;
+  const market = useSelector((state) => state.assetsInfos.assets);
   const freeAmount = useSelector((state) => state.clientInfos.freeAmount);
+
+  const { openModal, setOpenModal, dealStock } = props;
+  const { symbol, variation, price } = dealStock;
+  const { quantity } = market.find((asset) => asset.symbol === symbol) || 0;
 
   const [inputValue, setInputValue] = useState(0);
   const [inputQuantity, setInputQuantity] = useState(0);
   const [isBuying, setIsBuying] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
+
   const handleClose = () => setOpenModal(false);
 
   useEffect(() => {
@@ -69,8 +72,10 @@ export default function DealModal({ props }) {
     afterFocus();
     if (isBuying) {
       store.dispatch(withdraw(inputValue));
+      store.dispatch(buyAssets({ symbol, inputQuantity }));
     } else {
       store.dispatch(deposit(inputValue));
+      store.dispatch(sellAssets({ symbol, inputQuantity }));
     }
   }
 
