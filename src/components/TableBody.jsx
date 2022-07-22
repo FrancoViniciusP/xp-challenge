@@ -19,7 +19,7 @@ export default function TableBody({ props, stock }) {
       <td className={variation > 0 ? 'positive' : 'negative'}>{`${variation}%`}</td>
       <td>{quantity}</td>
       <td className="negociate">
-        <button type="button" onClick={handleClick}>
+        <button data-testid="negotiate-btn" type="button" onClick={handleClick}>
           <img src={quantity > 0 ? 'venda.svg' : 'noVenda.svg'} alt="botão para negociar" />
         </button>
       </td>
