@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { PASSWORD_MIN, REGEX_VALIDATION } from '../helpers/constants';
 import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
 import LoginButton from '../styles/elements/LoginButton';
@@ -8,7 +8,8 @@ export default function LoginForm() {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [redirect, setRedirect] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     const emailSaved = getLocalStorage('email') || '';
@@ -29,12 +30,11 @@ export default function LoginForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setLocalStorage('email', userEmail);
-    setRedirect(true);
+    history.push('/carteira');
   }
 
   return (
     <div>
-      {redirect && <Navigate to="/carteira" />}
 
       <form type="submit" onSubmit={handleSubmit}>
         <label htmlFor="email">
@@ -60,6 +60,7 @@ export default function LoginForm() {
         </label>
 
         <LoginButton
+          data-testid="submit"
           type="submit"
           aria-label="entrar"
           disabled={isButtonDisabled}

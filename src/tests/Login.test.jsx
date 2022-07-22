@@ -30,7 +30,7 @@ describe('The Login Page', () => {
     expect(passwordInput).toBeInTheDocument();
   });
 
-  it('cotains a disabled button', () => {
+  it('contains a disabled button', () => {
     render(<Login />);
 
     const button = screen.getByRole('button');
@@ -66,5 +66,30 @@ describe('When the forms', () => {
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     expect(button).toBeEnabled();
+  });
+});
+
+const mockHistoryPush = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
+
+describe('The confirm button', () => {
+  it('redirects when is clicked', async () => {
+    render(<Login />);
+
+    const emailInput = screen.getByTestId('email');
+    const passwordInput = screen.getByTestId('password');
+
+    userEvent.type(emailInput, CORRECT_EMAIL);
+    userEvent.type(passwordInput, CORRECT_PASSWORD);
+
+    const button = screen.getByTestId('submit');
+    userEvent.click(button);
+    expect(mockHistoryPush).toHaveBeenCalledWith('/carteira');
   });
 });

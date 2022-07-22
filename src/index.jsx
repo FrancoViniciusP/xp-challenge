@@ -10,10 +10,11 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
+
+  <BrowserRouter>
+    <Provider store={store}>
       <Reset />
       <App />
-    </BrowserRouter>
-  </Provider>,
+    </Provider>
+  </BrowserRouter>,
 );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import CashInfos from '../components/CashInfos';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -7,12 +7,13 @@ import InvestInfos from '../components/InvestInfos';
 import TransferModal from '../components/TransferModal';
 
 export default function Carteira() {
-  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [hideValues, setHideValues] = useState(false);
 
+  const history = useHistory();
+
   function investButton() {
-    navigate('/bolsa');
+    history.push('/bolsa');
   }
 
   const modalProps = {
