@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '@mui/material/Modal';
-import CashInfos from './CashInfos';
-import TransferMoney from './TransferMoney';
-import ModalButton from '../styles/elements/ModalButton';
-import { style } from '../helpers/constants';
+import CashInfos from '../infos/CashInfos';
+import TransferMoney from '../divs/DepositWithdraw';
+import ModalButton from '../../styles/elements/ModalButton';
+import { style } from '../../helpers/constants';
 
 export default function TransferModal({ props }) {
   const { openModal, setOpenModal, hideValues } = props;

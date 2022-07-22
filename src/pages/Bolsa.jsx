@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Footer from '../components/Footer';
-import Table from '../components/Table';
+import AssetsTable from '../components/tables/AssetsTable';
+import Footer from '../components/navigation/Footer';
 import BodyHeader from '../styles/elements/BodyHeader';
 
 export default function Bolsa() {
@@ -25,7 +25,7 @@ export default function Bolsa() {
         </button>
         <button className="bolsaButton" type="button" onClick={filterMyStocks}>Meus Ativos</button>
       </BodyHeader>
-      <Table stocks={stocks} />
+      <AssetsTable stocks={stocks} />
       <Footer />
     </span>
   );

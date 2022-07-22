@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import BodyHeader from '../styles/elements/BodyHeader';
-import LogoHeader from '../styles/elements/LogoHeader';
-import UserMessage from '../styles/elements/UserMessage';
-import HrLogin from '../styles/elements/HrLogin';
+import BodyHeader from '../../styles/elements/BodyHeader';
+import LogoHeader from '../../styles/elements/LogoHeader';
+import UserMessage from '../../styles/elements/UserMessage';
+import HrLogin from '../../styles/elements/HrLogin';
 
 export default function Header({ setHide }) {
   const name = useSelector((state) => state.clientInfos.name);

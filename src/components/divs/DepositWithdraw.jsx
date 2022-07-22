@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import store from '../redux/store';
-import GeneralButton from '../styles/elements/GeneralButton';
-import { deposit, withdraw } from '../redux/reducers/clientInfos';
+import store from '../../redux/store';
+import GeneralButton from '../../styles/elements/GeneralButton';
+import { deposit, withdraw } from '../../redux/reducers/clientInfos';
 
-export default function TransferMoney({ props }) {
+export default function DepositWithdraw({ props }) {
   const { isWithdraw } = props;
   const freeAmount = useSelector((state) => state.clientInfos.freeAmount);
   const [inputValue, setInputValue] = useState(0);
@@ -39,6 +39,6 @@ export default function TransferMoney({ props }) {
   );
 }
 
-TransferMoney.propTypes = {
+DepositWithdraw.propTypes = {
   isWithdraw: PropTypes.bool,
 }.isRequired;

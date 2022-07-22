@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { PASSWORD_MIN, REGEX_VALIDATION } from '../helpers/constants';
-import { getLocalStorage, setLocalStorage } from '../helpers/localStorage';
-import LoginButton from '../styles/elements/LoginButton';
+import { PASSWORD_MIN, REGEX_VALIDATION } from '../../helpers/constants';
+import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
+import LoginButton from '../../styles/elements/LoginButton';
 
 export default function LoginForm() {
   const [userEmail, setUserEmail] = useState('');

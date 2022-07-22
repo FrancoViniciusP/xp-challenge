@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import FooterButtons from '../styles/elements/FooterButtons';
+import FooterButtons from '../../styles/elements/FooterButtons';
 
 export default function Footer() {
   const history = useHistory();

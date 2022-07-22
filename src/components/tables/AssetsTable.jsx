@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import TableStyle from '../styles/elements/TableStyle';
-import DealModal from './DealModal';
+import TableStyle from '../../styles/elements/TableStyle';
+import DealModal from '../modals/DealModal';
 import TableBody from './TableBody';
 
-export default function Table({ stocks }) {
+export default function AssetsTable({ stocks }) {
   const [openModal, setOpenModal] = useState(false);
   const [dealStock, setDealStock] = useState({});
 
@@ -39,6 +39,6 @@ export default function Table({ stocks }) {
   );
 }
 
-Table.propTypes = {
+AssetsTable.propTypes = {
   stocks: PropTypes.array,
 }.isRequired;

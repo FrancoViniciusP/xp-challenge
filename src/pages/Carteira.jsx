@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import CashInfos from '../components/CashInfos';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import InvestInfos from '../components/InvestInfos';
-import TransferModal from '../components/TransferModal';
+import CashInfos from '../components/infos/CashInfos';
+import Footer from '../components/navigation/Footer';
+import Header from '../components/navigation/Header';
+import InvestInfos from '../components/infos/InvestInfos';
+import TransferModal from '../components/modals/TransferModal';
 
 export default function Carteira() {
   const [openModal, setOpenModal] = useState(false);

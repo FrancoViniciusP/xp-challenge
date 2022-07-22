@@ -3,8 +3,8 @@ import { Skeleton } from '@mui/material';
 
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import ButtonsDiv from '../styles/elements/ButtonsDiv';
-import UserMessage from '../styles/elements/UserMessage';
+import ButtonsDiv from '../../styles/elements/ButtonsDiv';
+import UserMessage from '../../styles/elements/UserMessage';
 
 export default function CashInfos({ props }) {
   const freeAmount = useSelector((state) => state.clientInfos.freeAmount);
