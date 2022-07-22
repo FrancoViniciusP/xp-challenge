@@ -18,6 +18,7 @@ const assetsInfos = createSlice({
       });
       return { assets: newState };
     },
+
     sellAssets({ assets }, { payload }) {
       const newState = assets.map((asset) => {
         if (asset.symbol === payload.symbol) {
@@ -28,11 +29,15 @@ const assetsInfos = createSlice({
       });
       return { assets: newState };
     },
+
+    setAllAssets(state, action) {
+      return { assets: action.payload };
+    },
   },
 });
 
 export const {
-  buyAssets, sellAssets,
+  buyAssets, sellAssets, setAllAssets,
 } = assetsInfos.actions;
 
 export default assetsInfos.reducer;
