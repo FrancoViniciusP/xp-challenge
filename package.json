@@ -22,12 +22,16 @@
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
-  "jest":{
+  "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/styles/**",
-      "!src/App.jsx","!src/index.jsx","!src/market.js",
-      "!src/temp.js","!src/helpers/**", "!src/redux/**",
+      "!src/App.jsx",
+      "!src/index.jsx",
+      "!src/market.js",
+      "!src/temp.js",
+      "!src/helpers/**",
+      "!src/redux/**",
       "!src/tests/mocks/**"
     ]
   },

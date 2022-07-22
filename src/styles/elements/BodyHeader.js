@@ -4,7 +4,7 @@ export default style.div`
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 
   button {
     color: white;
@@ -22,7 +22,6 @@ export default style.div`
   button:focus {
     text-decoration: 1px underline var(--yellow);
   }
-
 
   .bolsaButton {
     font-size: 24px;

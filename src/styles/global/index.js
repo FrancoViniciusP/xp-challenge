@@ -131,6 +131,7 @@ const Reset = createGlobalStyle`
   .infosSpace{
     margin: 25px 0 ;
   }
+
 `;
 
 export default Reset;

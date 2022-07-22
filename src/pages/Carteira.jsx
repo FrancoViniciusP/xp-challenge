@@ -5,6 +5,7 @@ import Footer from '../components/navigation/Footer';
 import Header from '../components/navigation/Header';
 import InvestInfos from '../components/infos/InvestInfos';
 import TransferModal from '../components/modals/TransferModal';
+import CarteiraInfos from '../styles/elements/CarteiraInfos';
 
 export default function Carteira() {
   const [openModal, setOpenModal] = useState(false);
@@ -35,8 +36,10 @@ export default function Carteira() {
   return (
     <span>
       <Header setHide={setHideValues} />
-      <InvestInfos props={pageProps} />
-      <CashInfos props={pageProps} />
+      <CarteiraInfos>
+        <InvestInfos props={pageProps} />
+        <CashInfos props={pageProps} />
+      </CarteiraInfos>
       <TransferModal props={modalProps} />
       <Footer />
     </span>

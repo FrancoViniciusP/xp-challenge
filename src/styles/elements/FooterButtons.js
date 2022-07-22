@@ -11,8 +11,7 @@ export default style.footer`
   border-top: 1px solid var(--yellow);
 
   button {
-    background-color: var(--black-secondary);
-    
+    background-color: var(--black-secondary);    
     color: white;
     padding: 30px ;
     margin: 0px;
