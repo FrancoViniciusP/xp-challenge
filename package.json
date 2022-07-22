@@ -27,7 +27,8 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/styles/**",
       "!src/App.jsx","!src/index.jsx","!src/market.js",
-      "!src/temp.js","!src/helpers/**", "!src/redux/**"
+      "!src/temp.js","!src/helpers/**", "!src/redux/**",
+      "!src/tests/mocks/**"
     ]
   },
   "scripts": {

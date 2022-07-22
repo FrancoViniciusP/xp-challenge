@@ -23,7 +23,7 @@ export default function Header({ setHide }) {
         <HrLogin />
       </UserMessage>
 
-      <button type="button" onClick={handleToogle}>
+      <button data-testid="hide-numbers" type="button" onClick={handleToogle}>
         <img src={`${toogle}-eye.svg`} alt="esconder números" />
       </button>
     </BodyHeader>

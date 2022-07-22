@@ -20,6 +20,7 @@ export default function CashInfos({ props }) {
         {hideValues
           ? (
             <Skeleton
+              data-testid="skeleton"
               animation="wave"
               sx={{ bgcolor: 'grey.900', margin: 'auto' }}
               width={200}

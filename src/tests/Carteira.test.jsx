@@ -16,17 +16,6 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('The Carteira Page', () => {
-  it('contains the xp logo', () => {
-    render(
-      <Provider store={store}>
-        <Carteira />
-      </Provider>,
-    );
-
-    const logoXp = screen.getByAltText('logo xp investimentos');
-    expect(logoXp).toBeInTheDocument();
-  });
-
   it('contains the text "patrimonio investido"', () => {
     render(
       <Provider store={store}>
@@ -178,5 +167,45 @@ describe('The transfer modal', () => {
     expect(balance).toHaveLength(2);
 
     expect(balance[1].innerHTML).toBe('R$ 0');
+  });
+});
+
+describe('The header in Carteira Page', () => {
+  it('contains the xp logo', () => {
+    render(
+      <Provider store={store}>
+        <Carteira />
+      </Provider>,
+    );
+
+    const logoXp = screen.getByAltText('logo xp investimentos');
+    expect(logoXp).toBeInTheDocument();
+  });
+
+  it('contains a greetings message', () => {
+    render(
+      <Provider store={store}>
+        <Carteira />
+      </Provider>,
+    );
+
+    const greetingsMessage = screen.getByText(/Olá,/i);
+    expect(greetingsMessage).toBeInTheDocument();
+  });
+
+  it('contains a hide values button and it works', () => {
+    render(
+      <Provider store={store}>
+        <Carteira />
+      </Provider>,
+    );
+
+    const hideButton = screen.getByTestId('hide-numbers');
+    expect(hideButton).toBeInTheDocument();
+
+    userEvent.click(hideButton);
+
+    const skeleton = screen.getByTestId('skeleton');
+    expect(skeleton).toBeInTheDocument();
   });
 });
