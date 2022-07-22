@@ -85,7 +85,7 @@ export default function DealModal({ props }) {
       sx={style}
     >
       <span>
-        <ModalButton type="button" onClick={handleClose}>X</ModalButton>
+        <ModalButton data-testid="close-modal" type="button" onClick={handleClose}>X</ModalButton>
         <div className="infosSpace">
           <UserMessage>Saldo disponível</UserMessage>
           <h1>{`R$ ${freeAmount}`}</h1>
@@ -110,6 +110,7 @@ export default function DealModal({ props }) {
         <DealDiv>
           Quantidade
           <input
+            data-testid="quantidade"
             type="number"
             className={isBuying ? 'buy' : 'sell'}
             onBlur={() => afterFocus()}
@@ -121,6 +122,7 @@ export default function DealModal({ props }) {
         <DealDiv>
           Valor Financeiro
           <input
+            data-testid="valor-financeiro"
             type="number"
             className={isBuying ? 'buy' : 'sell'}
             placeholder="Valor"

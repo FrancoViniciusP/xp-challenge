@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Provider } from 'react-redux';
-import Footer from '../components/Footer';
+import Footer from '../components/navigation/Footer';
 
 import store from '../redux/store';
 

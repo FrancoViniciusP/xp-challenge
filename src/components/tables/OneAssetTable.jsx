@@ -21,7 +21,7 @@ export default function OneAssetTable({ stock, quantity }) {
           <td className="ticker">{symbol}</td>
           <td>{price}</td>
           <td className={variation > 0 ? 'positive' : 'negative'}>{`${variation}%`}</td>
-          <td>{quantity}</td>
+          <td data-testid="asset-quantity">{quantity}</td>
         </tr>
       </tbody>
     </TableStyle>
