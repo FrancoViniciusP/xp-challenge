@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import formatter from '../../helpers/functions';
 
 const clientInfos = createSlice({
   name: 'client',
@@ -15,9 +14,8 @@ const clientInfos = createSlice({
     setCodClient(state, action) {
       return { ...state, codClient: action.payload };
     },
-    setAmount(state, action) {
-      const result = formatter.format(action.payload);
-      return { ...state, amount: result };
+    setFreeAmount(state, action) {
+      return { ...state, freeAmount: action.payload };
     },
     deposit(state, action) {
       const result = +state.freeAmount + +action.payload;
@@ -31,7 +29,7 @@ const clientInfos = createSlice({
 });
 
 export const {
-  setName, setCodClient, setAmount, deposit, withdraw,
+  setName, setCodClient, setAmount, deposit, withdraw, setFreeAmount,
 } = clientInfos.actions;
 
 export default clientInfos.reducer;

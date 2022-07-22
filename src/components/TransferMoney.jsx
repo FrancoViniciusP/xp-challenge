@@ -32,7 +32,7 @@ export default function TransferMoney({ props }) {
 
   return (
     <div>
-      <input type="number" value={inputValue} onChange={(e) => setValue(e)} />
+      <input data-testid="transfer-input" type="number" value={inputValue} onChange={(e) => setValue(e)} />
       {isDisabled && isWithdraw && <p>Valor insuficiente</p>}
       <GeneralButton disabled={isDisabled} type="reset" onClick={() => handleClick()}>CONFIRMAR</GeneralButton>
     </div>

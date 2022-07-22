@@ -28,7 +28,7 @@ export default function CashInfos({ props }) {
               className="vender"
             />
           )
-          : <h1>{`R$ ${freeAmount}`}</h1>}
+          : <h1 data-testid="free-amount">{`R$ ${freeAmount}`}</h1>}
       </div>
       <ButtonsDiv>
         <button className={leftType} type="button" onClick={leftClick}>{leftButtonName}</button>
