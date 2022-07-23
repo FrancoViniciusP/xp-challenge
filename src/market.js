@@ -6,7 +6,7 @@ export default [
     quantity: 10000,
   },
   {
-    symbol: 'BBSA3',
+    symbol: 'BBDC4',
     price: 32.20,
     variation: 2.50,
     quantity: 100,

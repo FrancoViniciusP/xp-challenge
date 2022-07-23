@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '@mui/material/Modal';
 import { useSelector } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
 import ModalButton from '../../styles/elements/ModalButton';
 import UserMessage from '../../styles/elements/UserMessage';
 import DealDiv from '../../styles/elements/DealDiv';
@@ -11,6 +12,7 @@ import store from '../../redux/store';
 import { deposit, withdraw } from '../../redux/reducers/clientInfos';
 import { buyAssets, sellAssets } from '../../redux/reducers/assetsInfos';
 import OneAssetTable from '../tables/OneAssetTable';
+import { showToast } from '../../helpers/functions';
 
 export default function DealModal({ props }) {
   const market = useSelector((state) => state.assetsInfos.assets);
@@ -77,6 +79,7 @@ export default function DealModal({ props }) {
       store.dispatch(deposit(inputValue));
       store.dispatch(sellAssets({ symbol, inputQuantity }));
     }
+    showToast(isBuying, price, inputQuantity);
   }
 
   return (
@@ -85,6 +88,7 @@ export default function DealModal({ props }) {
       sx={style}
     >
       <span>
+        <Toaster />
         <ModalButton data-testid="close-modal" type="button" onClick={handleClose}>X</ModalButton>
         <div className="infosSpace">
           <UserMessage>Saldo disponível</UserMessage>
