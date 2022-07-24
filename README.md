@@ -2,7 +2,16 @@
 
 Projeto desenvolvido por <strong>Vinicius Pacheco Franco</strong> para o desafio técnico de Software Engineer I da XP.
 
-[Deploy da Aplicação](https://francoviniciusp.github.io/xp-challenge/)
+[Deploy da Aplicação](https://vinicius-pacheco-xp.vercel.app/)
+<details>
+  <summary><strong>:iphone: Experiência Mobile :iphone:</strong></summary><br />
+
+> Esse aplicativo foi desenvolvido inicialmente para Mobile.
+ - Para uma melhor experiencia aperte `F12` no browser.
+ - E depois `Ctrl + Shift + M` para visualizar como mobile :smiley:.
+
+</details>
+
 ## Objetivo
 
 Desenvolver o FrontEnd/Mobile de um aplicativo de investimento em ações com algumas funcionalidades de conta digital.
@@ -36,14 +45,7 @@ Desenvolver o FrontEnd/Mobile de um aplicativo de investimento em ações com al
   
 </details>
 
-<details>
-  <summary><strong>:iphone: Experiência Mobile :iphone:</strong></summary><br />
 
-> Esse aplicativo foi desenvolvido inicialmente para Mobile.
- - Para uma melhor experiencia aperte `F12` no browser.
- - E depois `Ctrl + Shift + M` para visualizar como mobile :smiley:.
-
-</details>
 
 ## O que foi desenvolvido?
 
