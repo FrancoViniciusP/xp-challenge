@@ -9,7 +9,7 @@ import CarteiraInfos from '../styles/elements/CarteiraInfos';
 
 export default function Carteira() {
   const [openModal, setOpenModal] = useState(false);
-  const [hideValues, setHideValues] = useState(false);
+  const [hideValues, setHideValues] = useState(true);
 
   const history = useHistory();
 
