@@ -78,6 +78,11 @@ describe('The transfer modal', () => {
       </Provider>,
     );
 
+    const hideButton = screen.getByTestId('hide-numbers');
+    expect(hideButton).toBeInTheDocument();
+
+    userEvent.click(hideButton);
+
     const transferButton = screen.getByText(/transferir/i);
     expect(transferButton).toBeInTheDocument();
 
@@ -116,6 +121,12 @@ describe('The transfer modal', () => {
         <Carteira />
       </Provider>,
     );
+
+    const hideButton = screen.getByTestId('hide-numbers');
+    expect(hideButton).toBeInTheDocument();
+
+    userEvent.click(hideButton);
+
     const transferButton = screen.getByText(/transferir/i);
     expect(transferButton).toBeInTheDocument();
 
@@ -147,6 +158,12 @@ describe('The transfer modal', () => {
         <Carteira />
       </Provider>,
     );
+
+    const hideButton = screen.getByTestId('hide-numbers');
+    expect(hideButton).toBeInTheDocument();
+
+    userEvent.click(hideButton);
+
     const transferButton = screen.getByText(/transferir/i);
     expect(transferButton).toBeInTheDocument();
 
@@ -199,11 +216,6 @@ describe('The header in Carteira Page', () => {
         <Carteira />
       </Provider>,
     );
-
-    const hideButton = screen.getByTestId('hide-numbers');
-    expect(hideButton).toBeInTheDocument();
-
-    userEvent.click(hideButton);
 
     const skeleton = screen.getByTestId('skeleton');
     expect(skeleton).toBeInTheDocument();
