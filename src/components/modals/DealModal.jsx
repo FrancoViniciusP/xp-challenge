@@ -12,7 +12,7 @@ import store from '../../redux/store';
 import { deposit, withdraw } from '../../redux/reducers/clientInfos';
 import { buyAssets, sellAssets } from '../../redux/reducers/assetsInfos';
 import OneAssetTable from '../tables/OneAssetTable';
-import { showToast } from '../../helpers/functions';
+import { roundNumber, showToast, turnPositive } from '../../helpers/functions';
 
 export default function DealModal({ props }) {
   const market = useSelector((state) => state.assetsInfos.assets);
@@ -40,17 +40,9 @@ export default function DealModal({ props }) {
     if (!isBuying) {
       setIsDisabled(inputQuantity > quantity || inputQuantity < 100);
     } else {
-      setIsDisabled(+inputValue > +freeAmount);
+      setIsDisabled(+inputValue > +freeAmount || inputQuantity < 100);
     }
   }, [inputValue, inputQuantity, isBuying, quantity, freeAmount]);
-
-  function roundNumber(number) {
-    return Math.floor(number / 100) * 100;
-  }
-
-  function turnPositive(number) {
-    return Math.abs(number);
-  }
 
   function handleValue({ value }) {
     setInputValue(turnPositive(value));

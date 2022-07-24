@@ -4,6 +4,14 @@ const formatter = new Intl.NumberFormat('id');
 
 export default formatter;
 
+export function roundNumber(number) {
+  return Math.floor(number / 100) * 100;
+}
+
+export function turnPositive(number) {
+  return Math.abs(number);
+}
+
 export function showToast(isBuying, price, quantity) {
   if (isBuying) {
     return toast.success(`Você comprou ${quantity} ações a ${price} reais`, {
