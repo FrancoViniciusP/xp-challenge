@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/xp-challenge/static/js/main.7f3d2a1e.js",
+    "main.js": "/xp-challenge/static/js/main.3274aa3e.js",
     "index.html": "/xp-challenge/index.html",
-    "main.7f3d2a1e.js.map": "/xp-challenge/static/js/main.7f3d2a1e.js.map"
+    "main.3274aa3e.js.map": "/xp-challenge/static/js/main.3274aa3e.js.map"
   },
   "entrypoints": [
-    "static/js/main.7f3d2a1e.js"
+    "static/js/main.3274aa3e.js"
   ]
 }
