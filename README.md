@@ -2,6 +2,7 @@
 
 Projeto desenvolvido por <strong>Vinicius Pacheco Franco</strong> para o desafio técnico de Software Engineer I da XP.
 
+[Deploy da Aplicação](https://francoviniciusp.github.io/xp-challenge/)
 ## Objetivo
 
 Desenvolver o FrontEnd/Mobile de um aplicativo de investimento em ações com algumas funcionalidades de conta digital.
